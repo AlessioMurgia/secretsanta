@@ -14,7 +14,6 @@ function Page() {
             height: "100vh",
             width: "100vw"
         }}>
-            {/* Render the top bar and bottom bar components */}
             <TopBar/>
             <BottomBar/>
 

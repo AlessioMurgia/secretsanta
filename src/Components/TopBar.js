@@ -1,4 +1,5 @@
 import React from "react";
+import gift from "../images/gift.svg";
 
 function TopBar() {
     return (
@@ -6,10 +7,24 @@ function TopBar() {
             height: "10%",
             backgroundColor: "#3897B5",
             color: "white",
-            textAlign: "center",
-            opacity: "0.8"
+            opacity: "0.8",
+            display: "flex",
+            alignItems:"center"
         }}>
-            Top Bar
+            <div style={{
+                color: "white",
+                marginLeft:"5%",
+                display: "flex",
+                alignItems:"center",
+            }}>
+                <img src={gift} alt="React Logo" />
+                <p style={{
+                    marginLeft:"10px",
+                    fontSize:"30px"
+                }}>
+                    Secret Santa
+                </p>
+            </div>
         </div>
     );
 }
