@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 function InputBar(props) {
     const [inputValue, setInputValue] = useState('');
@@ -16,6 +18,8 @@ function InputBar(props) {
         }
     }
 
+    const navigate = useNavigate();
+
     const handleSubmit = (event) => {
         //event.preventDefault();
         //props.onSubmit(inputValue);
@@ -23,6 +27,8 @@ function InputBar(props) {
 
         event.preventDefault();
         console.log('Input value:', inputValue);
+        navigate('/mail');
+
     };
 
     return (
@@ -56,16 +62,18 @@ function InputBar(props) {
                         borderRadius: "20px 0px 0px 20px",
                     }}
                 />
-                <button type="submit" style={{
-                    backgroundColor: "#3897B5",
-                    borderRadius: "0px 20px 20px 0px",
-                    height: "100%",
-                    cursor: "pointer",
-                    marginLeft: "0px",
-                    color: "white",
-                    fontSize: "30px",
-                    border:"none",
-                }}>
+                <button
+                    type="submit"
+                    style={{
+                        backgroundColor: "#3897B5",
+                        borderRadius: "0px 20px 20px 0px",
+                        height: "100%",
+                        cursor: "pointer",
+                        marginLeft: "0px",
+                        color: "white",
+                        fontSize: "30px",
+                        border:"none",
+                    }}>
                     START
                 </button>
             </div>
