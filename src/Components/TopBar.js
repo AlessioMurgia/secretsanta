@@ -5,6 +5,7 @@ function TopBar() {
     return (
         <div style={{
             height: "10%",
+            minHeight:"45px",
             backgroundColor: "#3897B5",
             color: "white",
             opacity: "0.8",
