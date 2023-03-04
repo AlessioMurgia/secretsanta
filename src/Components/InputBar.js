@@ -43,7 +43,8 @@ function InputBar(props) {
                 margin:"auto",
                 opacity:"0.8",
                 marginTop:"10%",
-                marginBottom:"10%"
+                marginBottom:"10%",
+                boxShadow: "0 5px 5px rgba(0, 0, 0, 0.5)",
             }}>
                 <input
                     type="text"

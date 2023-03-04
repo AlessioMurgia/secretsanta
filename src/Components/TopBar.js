@@ -10,7 +10,9 @@ function TopBar() {
             color: "white",
             opacity: "0.8",
             display: "flex",
-            alignItems:"center"
+            alignItems:"center",
+            boxShadow: "0 5px 5px rgba(0, 0, 0, 0.5)",
+
         }}>
             <div style={{
                 color: "white",
@@ -18,7 +20,7 @@ function TopBar() {
                 display: "flex",
                 alignItems:"center",
             }}>
-                <img src={gift} alt="React Logo" />
+                <img src={gift} alt="Logo" />
                 <p style={{
                     marginLeft:"10px",
                     fontSize:"30px"

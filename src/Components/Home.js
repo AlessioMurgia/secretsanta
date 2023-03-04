@@ -4,16 +4,15 @@ import TopBar from "./TopBar";
 import BottomBar from "./BottomBar";
 import InputBar from "./InputBar";
 
-function Page() {
+function Home() {
     return (
             <div style={{
-                // Set the background image
                 backgroundImage: `url(${backgroundImage})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                // Set the height and width of the page
                 height: "100vh",
-                width: "100vw"
+                width: "100vw",
+                boxShadow: "inset 0 -120px 100px 90px rgba(0,0,0,0.5)",
             }}>
                 <TopBar/>
                 <InputBar/>
@@ -23,4 +22,4 @@ function Page() {
     )
 }
 
-export default Page;
+export default Home;
