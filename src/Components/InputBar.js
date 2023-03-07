@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+function InputBar() {
 
-function InputBar(props) {
     const [inputValue, setInputValue] = useState('');
+    const navigate = useNavigate();
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
@@ -13,22 +14,15 @@ function InputBar(props) {
         const keyCode = event.keyCode || event.which;
         const keyValue = String.fromCharCode(keyCode);
         const regex = /^[0-9\b]+$/; // only allow numbers and backspace
+
         if (!regex.test(keyValue)) {
             event.preventDefault();
         }
     }
 
-    const navigate = useNavigate();
-
     const handleSubmit = (event) => {
-        //event.preventDefault();
-        //props.onSubmit(inputValue);
-        //setInputValue('');
-
         event.preventDefault();
-        console.log('Input value:', inputValue);
-        navigate('/mail');
-
+        navigate('/mail',{state:{id:inputValue}});
     };
 
     return (
