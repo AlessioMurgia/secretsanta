@@ -1,4 +1,5 @@
 import React from "react";
+
 import backgroundImage from "../images/background.png";
 import TopBar from "./TopBar";
 import BottomBar from "./BottomBar";

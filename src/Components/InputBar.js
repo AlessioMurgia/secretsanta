@@ -22,7 +22,9 @@ function InputBar() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        navigate('/mail',{state:{id:inputValue}});
+        if(inputValue<=20){
+            navigate('/mail',{state:{id:inputValue}});
+        }
     };
 
     return (

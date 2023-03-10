@@ -4,22 +4,14 @@ import {useLocation} from 'react-router-dom';
 import backgroundImage from "../images/background.png";
 import TopBar from "./TopBar";
 import BottomBar from "./BottomBar";
+import InputEmail from "./InputEmail";
 
 function Second() {
     const location = useLocation();
 
+    const components = Array(parseInt(location.state.id)).fill(null).map((_, i) => <InputEmail key={i} />);
 
-    const provaprova= (bello)=>{
 
-        console.log("cane");
-        if (bello<15) {
-            return "BENE"
-        }
-        else {
-            return "TOO MUCH"
-        }
-
-    }
 
     return (
         <div style={{
@@ -31,8 +23,10 @@ function Second() {
             boxShadow: "inset 0 -120px 100px 90px rgba(0,0,0,0.5)",
         }}>
             <TopBar/>
-
-            {provaprova(location.state.id)}
+                <div>
+                    {components}
+                    <button form="bigForm" type="submit">Submit</button>
+                </div>
 
             <BottomBar/>
         </div>
