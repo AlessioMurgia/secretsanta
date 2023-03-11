@@ -5,14 +5,15 @@ function BottomBar() {
         <div style={{
             height: "10%",
             backgroundColor: "#00394B",
-            textAlign: "center",
             position: "fixed",
-            bottom: "0px",
+            bottom: "0",
             color: "white",
             width: "100%",
             opacity: "0.8",
-        }}>
-        </div>
+            zIndex:"100",
+            left:"0",
+            right:"0",
+        }}/>
     );
 }
 

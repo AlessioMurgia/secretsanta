@@ -2,14 +2,14 @@ import React from "react";
 import { Routes, Route } from 'react-router-dom';
 
 import Home from "./Components/Home";
-import Second from "./Components/Second";
+import ExtractionPage from "./Components/ExtractionPage";
 
 function App() {
   return (
       <div>
           <Routes>
               <Route exact path="/" element={<Home />} />
-              <Route path="/mail" element={<Second />} />
+              <Route path="/extraction" element={<ExtractionPage />} />
           </Routes>
       </div>
   );

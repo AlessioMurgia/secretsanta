@@ -22,8 +22,16 @@ function InputBar() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if(inputValue<=20){
-            navigate('/mail',{state:{id:inputValue}});
+
+        //MAKE IT NICER
+        if(inputValue<=20 && inputValue){
+            navigate('/extraction',{state:{formsNumber:inputValue}});
+        }
+        else if (!inputValue) {
+            alert('Please fill out all fields.');
+        }
+        else {
+            alert("Number too high");
         }
     };
 
