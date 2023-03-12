@@ -32,10 +32,12 @@ export default InputEmail;
  */
 
 import React, { useState } from 'react';
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 function InfoForm(){
+
     const location = useLocation();
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState([]);
 
@@ -60,6 +62,8 @@ function InfoForm(){
             }
         }
         console.log(formData);
+        navigate('/thanks');
+
     };
 
     const createForms = () => {

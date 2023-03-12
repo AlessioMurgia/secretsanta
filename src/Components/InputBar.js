@@ -24,7 +24,7 @@ function InputBar() {
         event.preventDefault();
 
         //MAKE IT NICER
-        if(inputValue<=20 && inputValue){
+        if(inputValue<=20 && inputValue>=2){
             navigate('/extraction',{state:{formsNumber:inputValue}});
         }
         else if (!inputValue) {
