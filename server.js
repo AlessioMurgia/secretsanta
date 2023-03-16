@@ -13,15 +13,15 @@ app.listen(3001, () => {
     console.log('Server listening on port 3001');
 });
 
-const { sum } = require('./backend/backend');
+const { extractorHandler } = require('./backend/backend');
 
 app.post('/api/extract', (req, res) => {
 
-    //console.log(req.body);
-    res.send(req.body);
+    //console.log(req.body.formData);
+    //res.send(req.body);
+    const respPing = extractorHandler(req.body.formData)
     //const result = sum(a, b);
-    //res.send({ result });
-
+    res.send({respPing});
 });
 
 /*

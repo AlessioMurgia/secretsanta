@@ -34,7 +34,7 @@ function InfoForm(){
             body: JSON.stringify({formData})
         })
             .then(res => res.json())
-            .then(data => console.log(data.formData)).then(()=>navigate('/thanks'));
+            .then(()=>navigate('/thanks'));
     };
 
     const createForms = () => {
