@@ -1,3 +1,4 @@
+require('dotenv').config({path:'./backend/process.env'})
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');

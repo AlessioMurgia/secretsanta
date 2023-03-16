@@ -1,5 +1,4 @@
 const nodemailer = require('nodemailer');
-require('dotenv').config();
 
 function extractorHandler(formData) {
     const transporter = nodemailer.createTransport({
