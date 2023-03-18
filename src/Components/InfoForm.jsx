@@ -87,6 +87,12 @@ function InfoForm(){
     };
     return (
         <div>
+            <p style={{
+                color:"black",
+                fontSize:"30px",
+                textAlign:"center",
+                fontFamily:"fantasy",
+            }}>Santa's list</p>
             {createForms()}
             <button  onClick={handleSubmit} style={{
                 backgroundColor: "#3897B5",

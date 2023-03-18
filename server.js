@@ -18,10 +18,7 @@ const { extractorHandler } = require('./backend/backend');
 
 app.post('/api/extract', (req, res) => {
 
-    //console.log(req.body.formData);
-    //res.send(req.body);
     const respPing = extractorHandler(req.body.formData)
-    //const result = sum(a, b);
     res.send({respPing});
 });
 

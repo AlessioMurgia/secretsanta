@@ -28,7 +28,7 @@ function EndPage() {
                 color:"white",
                 fontSize:"30px"
             }}>
-                The emails has been sent!<br/>Now check your emails and<br/>MERRY CHRISTMAS
+                The emails has been sent! Now check your emails and MERRY CHRISTMAS
             </div>
             <BottomBar/>
         </div>
