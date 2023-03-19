@@ -32,7 +32,7 @@ function ExtractionPage() {
                         backgroundImage: `url(${scroll})`,
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "center center",
-                        backgroundSize: "80%",
+                        backgroundSize: "850px",
                         zIndex: "1",
                     }}>
                         <InfoForm/>

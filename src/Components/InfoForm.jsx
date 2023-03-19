@@ -6,6 +6,7 @@ function InfoForm(){
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState([]);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleChange = (event, index) => {
         const { name, value } = event.target;
@@ -23,7 +24,7 @@ function InfoForm(){
         // MAKE NICER
         for(let i=0; i<location.state.formsNumber; i++){
             if (!formData[i].name || !formData[i].email) {
-                alert('Please fill out all fields.');
+                setErrorMessage("Please fill Santa's list");
                 return;
             }
         }
@@ -40,6 +41,7 @@ function InfoForm(){
     const createForms = () => {
         return [...Array(parseInt(location.state.formsNumber))].map((_, index) => (
             <form key={index} onSubmit={(event) => handleSubmit(event, index)}>
+
                 <div style={{
                     display: "flex",
                     alignItems: "center",
@@ -93,6 +95,10 @@ function InfoForm(){
                 textAlign:"center",
                 fontFamily:"fantasy",
             }}>Santa's list</p>
+            {errorMessage && <p style={{
+                color:"white",
+                textAlign:"center",
+            }}>{errorMessage}</p>}
             {createForms()}
             <button  onClick={handleSubmit} style={{
                 backgroundColor: "#3897B5",

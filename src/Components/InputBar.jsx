@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 function InputBar() {
 
     const [inputValue, setInputValue] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
     const navigate = useNavigate();
 
     const handleInputChange = (event) => {
@@ -24,14 +26,17 @@ function InputBar() {
         event.preventDefault();
 
         //MAKE IT NICER
-        if(inputValue<=20 && inputValue>=2){
+        if(inputValue<=20 && inputValue>=4){
             navigate('/extraction',{state:{formsNumber:inputValue}});
         }
         else if (!inputValue) {
-            alert('Please fill out all fields.');
+            setErrorMessage('Please write the number of participants');
         }
-        else {
-            alert("Number too high");
+        else if(inputValue>20){
+            setErrorMessage("Number too high");
+        }
+        else{
+            setErrorMessage("Number too low")
         }
     };
 
@@ -82,6 +87,10 @@ function InputBar() {
                     START
                 </button>
             </div>
+            {errorMessage && <p style={{
+                color:"white",
+                textAlign:"center",
+            }}>{errorMessage}</p>}
         </form>
     );
 }
