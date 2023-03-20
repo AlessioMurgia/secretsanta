@@ -26,7 +26,7 @@ function InputBar() {
         event.preventDefault();
 
         //MAKE IT NICER
-        if(inputValue<=20 && inputValue>=4){
+        if(inputValue<=20 && inputValue>=3){
             navigate('/extraction',{state:{formsNumber:inputValue}});
         }
         else if (!inputValue) {
@@ -42,55 +42,21 @@ function InputBar() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div style={{
-                display: "flex",
-                alignItems: "center",
-                backgroundColor: "#BEFFFF",
-                borderRadius: "20px 20px 20px 20px",
-                width: "500px",
-                height: "60px",
-                margin:"auto",
-                opacity:"0.8",
-                marginTop:"10%",
-                marginBottom:"10%",
-                boxShadow: "0 5px 5px rgba(0, 0, 0, 0.5)",
-            }}>
-                <input
+            <div className="flex items-center bg-inputBarColor rounded-3xl w-500px h-60px m-auto opacity-80 mt-1/10 mb-1/10 shadow-topbarShadow">
+                <input className="flex-1 border-0 outline-0 text-sm p-20px bg-inputBarColor rounded-l-3xl"
                     type="text"
                     placeholder="Number of participants"
                     value={inputValue}
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown}
                     maxLength={2}
-                    style={{
-                        flex: "1",
-                        border: "none",
-                        outline: "none",
-                        fontSize: "15px",
-                        padding: "20px",
-                        backgroundColor: "#BEFFFF",
-                        borderRadius: "20px 0px 0px 20px",
-                    }}
                 />
-                <button
-                    type="submit"
-                    style={{
-                        backgroundColor: "#3897B5",
-                        borderRadius: "0px 20px 20px 0px",
-                        height: "100%",
-                        cursor: "pointer",
-                        marginLeft: "0px",
-                        color: "white",
-                        fontSize: "30px",
-                        border:"none",
-                    }}>
+                <button className="bg-topBarColor rounded-r-3xl h-full cursor-pointer ml-0 text-white text-3xl border-0"
+                    type="submit">
                     START
                 </button>
             </div>
-            {errorMessage && <p style={{
-                color:"white",
-                textAlign:"center",
-            }}>{errorMessage}</p>}
+            {errorMessage && <p className="text-white text-center"> {errorMessage}</p>}
         </form>
     );
 }

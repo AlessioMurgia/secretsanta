@@ -42,46 +42,18 @@ function InfoForm(){
         return [...Array(parseInt(location.state.formsNumber))].map((_, index) => (
             <form key={index} onSubmit={(event) => handleSubmit(event, index)}>
 
-                <div style={{
-                    display: "flex",
-                    alignItems: "center",
-                    backgroundColor: "#BEFFFF",
-                    borderRadius: "20px 20px 20px 20px",
-                    margin:"auto",
-                    opacity:"0.8",
-                    marginTop:"10%",
-                    marginBottom:"10%",
-                    boxShadow: "0 5px 5px rgba(0, 0, 0, 0.5)",
-                }}>
-                    <input
+                <div className="flex items-center bg-inputBarColor rounded-3xl m-auto opacity-80 mt-1/10 mb-1/10 shadow-topbarShadow">
+                    <input className="flex-1 border-0 outline-0 text-sm p-20px bg-inputBarColor rounded-3xl"
                         type="text"
                         name="name"
                         placeholder="Name"
                         onChange={(event) => handleChange(event, index)}
-                        style={{
-                            flex: "1",
-                            border: "none",
-                            outline: "none",
-                            fontSize: "15px",
-                            padding: "20px",
-                            backgroundColor: "#BEFFFF",
-                            borderRadius: "20px 20px 20px 20px",
-                        }}
                     />
-                    <input
+                    <input className="flex-1 border-0 outline-0 text-sm p-20px bg-inputBarColor rounded-3xl"
                         type="email"
                         name="email"
                         placeholder="Email"
                         onChange={(event) => handleChange(event, index)}
-                        style={{
-                            flex: "1",
-                            border: "none",
-                            outline: "none",
-                            fontSize: "15px",
-                            padding: "20px",
-                            backgroundColor: "#BEFFFF",
-                            borderRadius: "20px 20px 20px 20px",
-                        }}
                     />
                 </div>
             </form>
@@ -89,28 +61,13 @@ function InfoForm(){
     };
     return (
         <div>
-            <p style={{
-                color:"black",
-                fontSize:"30px",
-                textAlign:"center",
-                fontFamily:"fantasy",
-            }}>Santa's list</p>
-            {errorMessage && <p style={{
-                color:"white",
-                textAlign:"center",
-            }}>{errorMessage}</p>}
+            <p className="text-black text-3xl text-center font-serif font-bold">
+                Santa's list
+            </p>
+            {errorMessage && <p className="text-white text-center">{errorMessage}</p>}
             {createForms()}
-            <button  onClick={handleSubmit} style={{
-                backgroundColor: "#3897B5",
-                cursor: "pointer",
-                color: "white",
-                fontSize: "30px",
-                width:"100%",
-                border: "none",
-                padding: "20px",
-                borderRadius: "20px 20px 20px 20px",
-                marginBottom: "20%"
-            }}>
+            <button className="bg-topBarColor cursor-pointer text-white text-3xl w-full border-0 p-20px rounded-3xl mb-1/5"
+                    onClick={handleSubmit}>
                 Extract
             </button>
         </div>
@@ -118,66 +75,3 @@ function InfoForm(){
 }
 
 export default InfoForm;
-
-/*
-import React, { useState } from "react";
-import {useLocation} from "react-router-dom";
-
-function InputEmail() {
-    const [formData, setFormData] = useState([]);
-    const location = useLocation();
-
-    const handleInputChange = (event, formIndex) => {
-        const { name, value } = event.target;
-
-        // Make a copy of the formData array and update the value at the specified index
-        const updatedFormData = [...formData];
-        updatedFormData[formIndex] = { ...updatedFormData[formIndex], [name]: value };
-
-        setFormData(updatedFormData);
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // Do something with formData, such as send it to a server
-        console.log(formData);
-    };
-
-    const forms = [];
-    for (let i = 0; i < parseInt(location.state.id); i++) {
-        forms.push(
-            <form key={i} onSubmit={handleSubmit}>
-                <h2>Form {i + 1}</h2>
-                <label>
-                    Name:
-                    <input
-                        type="text"
-                        name="name"
-                        value={formData[i]?.name || ""}
-                        onChange={(event) => handleInputChange(event, i)}
-                    />
-                </label>
-                <label>
-                    Email:
-                    <input
-                        type="email"
-                        name="email"
-                        value={formData[i]?.email || ""}
-                        onChange={(event) => handleInputChange(event, i)}
-                    />
-                </label>
-            </form>
-        );
-    }
-
-    return (
-        <>
-            {forms}
-            <button onClick={handleSubmit}>Submit All Forms</button>
-        </>
-    );
-}
-
-export default InputEmail;
-
- */

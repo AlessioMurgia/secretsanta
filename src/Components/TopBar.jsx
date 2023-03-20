@@ -9,38 +9,14 @@ function TopBar() {
     const handleClick = (event) => {
         event.preventDefault();
         navigate('/');
-
     };
 
-
     return (
-        <div style={{
-            height: "10%",
-            minHeight:"45px",
-            width: "100%",
-            backgroundColor: "#3897B5",
-            opacity: "0.8",
-            display: "flex",
-            boxShadow: "0 5px 5px rgba(0, 0, 0, 0.5)",
-            position:"fixed",
-            zIndex:"100",
-            top:"0",
-            left:"0",
-            right:"0",
-
-        }}>
-            <div onClick={handleClick} style={{
-                marginLeft:"5%",
-                display: "flex",
-                alignItems:"center",
-                cursor: "pointer",
-            }}>
+        <div className="h-1/10 min-h-45 w-full bg-topBarColor opacity-80 flex shadow-topbarShadow fixed z-50 top-0 left-0 right-0">
+            <div className="ml-1/20 flex items-center cursor-pointer"
+                 onClick={handleClick}>
                 <img src={gift} alt="Logo" />
-                <p style={{
-                    marginLeft:"10px",
-                    fontSize:"30px",
-                    color: "white",
-                }}>
+                <p className="ml-2.5 text-3xl text-white">
                     Secret Santa
                 </p>
             </div>

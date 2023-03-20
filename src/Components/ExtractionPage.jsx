@@ -1,40 +1,15 @@
 import React from "react";
 
-import backgroundImage from "../images/background.png";
 import TopBar from "./TopBar";
 import BottomBar from "./BottomBar";
 import InfoForm from "./InfoForm";
-import scroll from "../images/scroll.png";
 
 function ExtractionPage() {
 
     return (
-            <div style={{
-                position: 'relative',
-                height: '100vh',
-                width: "100vw",
-                background: `url(${backgroundImage}) no-repeat center center fixed`,
-                backgroundSize: 'cover',
-                boxShadow: "inset 0 -120px 100px 90px rgba(0,0,0,0.5)",
-            }}>
+            <div className="relative h-screen w-screen bg-allbgImage bg-center bg-no-repeat bg-fixed bg-cover shadow-bgShadow">
                 <TopBar/>
-
-                    <div style={{
-                        display: "flex",
-                        justifyContent: "space-around",
-                        position: "absolute",
-                        top: "50px",
-                        bottom: "50px",
-                        left: 0,
-                        right: 0,
-                        overflow: "auto",
-                        padding: "50px",
-                        backgroundImage: `url(${scroll})`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "center center",
-                        backgroundSize: "850px",
-                        zIndex: "1",
-                    }}>
+                    <div className="flex justify-around absolute top-12 bottom-12 left-0 overflow-auto right-0 p-12 bg-bgScroll bg-no-repeat bg-center bg-850px">
                         <InfoForm/>
                     </div>
                     <BottomBar/>
